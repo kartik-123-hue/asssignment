@@ -1,27 +1,24 @@
-/ Online Java Compiler
-// Use this editor to write, compile and run your Java code online
 import java.util.*;
-class main {
-    public static void main(String[] args) {
+class main{
+    public static void main(String args[]){
+        int count=0;
         Scanner sc=new Scanner(System.in);
-        int colors[]=new int[100];
-        int count=0,number=0;
+        int arr[]=new int[100];
+        System.out.println("Enter the size of the array");
         int n=sc.nextInt();
-        System.out.print("Enter the colors elements:");
-        for(int i=0;i<n;i++){
-            colors[i]=sc.nextInt();
+        System.out.println("Enter the array of colors for the socks");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
         }
         for(int i=0;i<n-1;i++){
-            for(int j=i+1;j<=n;j++){
-                if(colors[i]==colors[j]){
-                 count++;  
+            for(int j=i+1;j<n;j++){
+                if(arr[i]==arr[j]){
+                    count++;
                 }
-                }
-                if(count%2==0){
-                    number++;
-                }
+            }
         }
-        System.out.println(count);
-        System.out.println("no match for"+number);
+        System.out.print("The pairs found"+count);
+        System.out.println("The pairs which dont match"+(n-count));
     }
 }
